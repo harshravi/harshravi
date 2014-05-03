@@ -1,0 +1,26 @@
+<p>You searched for: <strong>{{ query }}  {{ query1 }}</strong></p>
+
+{% if books %}
+    <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No user matched your search criteria.</p>
+{% endif %}
+
+<html>
+<head>
+	<script language="JavaScript">
+    //document.getElementById("name").src = 'http://en.wikipedia.org/wiki/';
+	document.frames['name'].onload = function(){
+		alert("hi");
+	}
+</script>
+</head>
+<body>
+<iframe id="name" height="100%" width="100%" src=""</iframe>
+</body>
+</html>

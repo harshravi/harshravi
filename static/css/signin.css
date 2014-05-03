@@ -1,0 +1,169 @@
+#container2 {
+width:0px;
+margin-top:15px;
+position: fixed;
+z-index:100000;
+
+}
+
+
+a:link, a:visited {
+color:gray;
+text-decoration:none;
+}
+a:hover {
+text-decoration:underline;
+}
+a img {
+border-width:0;
+}
+#topnav {
+font-size: 14px;   
+line-height: 2px;
+margin-left:140px;
+    
+}
+#topnav a.signin {
+
+text-decoration:none;
+color:gray;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+
+*padding:4px 12px 6px;
+}
+#topnav a.signin:hover {
+
+color:white;
+*padding:4px 10px 6px;
+}
+#topnav a.signin{
+font-weight:normal;
+}
+
+.signin {
+position:relative;
+margin-left:-70px;
+}
+#topnav a.signin:hover{
+        text-decoration:underline;
+        color:#b34671;
+        font-weight:normal;
+}
+
+a.signin span {
+background-position:100% 50%;
+padding:4px 16px 6px 0;
+}
+#topnav a.menu-open {
+background:transparent!important;
+color:#666!important;
+outline:none;
+}
+#small_signup {
+display:inline;
+float:none;
+line-height:23px;
+margin:25px 0 0;
+width:170px;
+}
+a.signin.menu-open span {
+color:#789;
+}
+
+
+#signin_menu {
+-moz-border-radius-topleft:5px;
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-webkit-border-top-left-radius:5px;
+-webkit-border-bottom-left-radius:5px;
+-webkit-border-bottom-right-radius:5px;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    border: 1px solid;
+    text-align: left;
+    padding: 0px 40px 74px 20px;
+    margin-left:-40px;
+    margin-top: 94px;
+    margin-right: 0px;
+    font-size: 12px;
+    color: #90D200;
+    border-radius: 32px;
+    background-color: #E1F0E9;
+    box-shadow: 1px -1px 13px 4px #6DAD2E inset;
+    transform: perspective(600px) rotateY(deg);
+    height: 368px;
+    background-image: url(/static/images/bg.jpg);
+    background-repeat: repeat;
+}
+
+
+
+
+#signin_menu input[type=text], #signin_menu input[type=password] {
+display:block;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border:1px solid #ACE;
+font-size:13px;
+margin-top:0px; 
+padding:5px;
+width:160px;    
+}
+#signin_menu p {
+margin:0px;
+}
+#signin_menu a {
+color:#6AC;
+}
+#signin_menu label {
+font-weight:normal;
+margin-bottom:-20px;
+}
+#signin_menu p.remember {
+padding:10px 0;
+}
+#signin_menu p.forgot, #signin_menu p.complete {
+clear:both;
+margin:-62px 0;
+}
+#signin_menu p a {
+color:#27B!important;
+}
+#signin_submit {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+background:#39D;
+border: 1px solid #39D;
+color: #FFF;
+text-shadow: 0px -1px 0px #39D;
+padding: 4px 10px 5px;
+font-size: 11px;
+margin: 10px 0px 115px 66px;
+font-weight: bold;
+width: 91px;
+#signin_submit::-moz-focus-inner {
+padding:0;
+border:0;
+}
+#signin_submit:hover, #signin_submit:focus {
+background-position:0 -5px;
+cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

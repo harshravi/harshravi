@@ -1,0 +1,1093 @@
+<body>
+
+    <div class="w-row row">
+        <!--
+
+         start of row 
+
+        -->
+        <!--
+
+         starting of left_side_bar 
+
+        -->
+        <div class="w-col w-col-2 left_side_bar">
+            <div class="w-clearfix side_bar_block">
+                <a href="#">
+                    <img class="thinkiit_logo" width="140" alt="52e8938a4d2cf7837f0001bb_iitpage.jpg" src="/static/images/iitpage.jpg"></img>
+                </a>
+                <div class="bar_contents side_bar_mennnu_contents">
+                    <div class="w-embed w-script side_bar_menu">
+                        <script language="JavaScript">
+			var ddaccordion={
+                	ajaxloadingmsg: '<img src="#" /><br />Loading Content...', //customize HTML to output while Ajax content is being 				fetched (if applicable)
+                	headergroup: {}, //object to store corresponding header group based on headerclass value
+                	contentgroup: {}, //object to store corresponding content group based on headerclass value
+                	preloadimages:function($images){
+                		$images.each(function(){
+                			var preloadimage=new Image()
+                			preloadimage.src=this.src
+                		})
+                	},
+                	expandone:function(headerclass, selected, scrolltoheader){ //PUBLIC function to expand a particular header
+                		this.toggleone(headerclass, selected, "expand", scrolltoheader)
+                	},
+                	collapseone:function(headerclass, selected){ //PUBLIC function to collapse a particular header
+                		this.toggleone(headerclass, selected, "collapse")
+                	},
+                	
+                	
+                	toggleone:function(headerclass, selected, optstate, scrolltoheader){ //PUBLIC function to expand/ collapse a particular header
+                		var $targetHeader=this.headergroup[headerclass].eq(selected)
+                		var $subcontent=this.contentgroup[headerclass].eq(selected)
+                		if (typeof optstate=="undefined" || optstate=="expand" && $subcontent.is(":hidden") || optstate=="collapse" && 					$subcontent.is(":visible"))
+                			$targetHeader.trigger("evt_accordion", [false, scrolltoheader])
+                	},
+                	ajaxloadcontent:function($targetHeader, $targetContent, config, callback){
+                		var ajaxinfo=$targetHeader.data('ajaxinfo')
+                		function handlecontent(content){ //nested function
+                			if (content){ //if ajax content has loaded
+                				ajaxinfo.cacheddata=content //remember ajax content 
+                				ajaxinfo.status="cached" //set ajax status to cached
+                				if ($targetContent.queue("fx").length==0){ //if this content isn't currently expanding or collapsing
+                					$targetContent.hide().html(content) //hide loading message, then set sub content's HTML to 								ajax content
+                					ajaxinfo.status="complete" //set ajax status to complete
+                					callback() //execute callback function- expand this sub content
+                				}
+                			}
+                			if (ajaxinfo.status!="complete"){
+                				setTimeout(function(){handlecontent(ajaxinfo.cacheddata)}, 100) //call handlecontent() again until 							ajax content has loaded (ajaxinfo.cacheddata contains data)
+                			}
+                		} //end nested function
+                		if (ajaxinfo.status=="none"){ //ajax data hasn't been fetched yet
+                			$targetContent.html(this.ajaxloadingmsg)
+                			$targetContent.slideDown(config.animatespeed)
+                			ajaxinfo.status="loading" //set ajax status to "loading"
+                			$.ajax({
+                				url: ajaxinfo.url, //path to external menu file
+                				error:function(ajaxrequest){
+                					handlecontent('Error fetching content. Server Response: '+ajaxrequest.responseText)
+                				},
+                				success:function(content){
+                					content=(content=="")? " " : content //if returned content is empty, set it to "space" is 								content no longer returns false/empty (hasn't loaded yet)
+                					handlecontent(content)
+                				}
+                			})
+                		}
+                		else if (ajaxinfo.status=="loading")
+                			handlecontent(ajaxinfo.cacheddata)
+                	},
+                	expandit:function($targetHeader, $targetContent, config, useractivated, directclick, skipanimation, scrolltoheader){
+                		var ajaxinfo=$targetHeader.data('ajaxinfo')
+                		if (ajaxinfo){ //if this content should be fetched via Ajax
+                			if (ajaxinfo.status=="none" || ajaxinfo.status=="loading")
+                				this.ajaxloadcontent($targetHeader, $targetContent, config, 
+						function(){ddaccordion.expandit($targetHeader, $targetContent, config, useractivated, directclick)})
+                			else if (ajaxinfo.status=="cached"){
+                				$targetContent.html(ajaxinfo.cacheddata)
+                				ajaxinfo.cacheddata=null
+                				ajaxinfo.status="complete"
+                			}
+                		}
+                		this.transformHeader($targetHeader, config, "expand")
+                		$targetContent.slideDown(skipanimation? 0 : config.animatespeed, function(){
+                			config.onopenclose($targetHeader.get(0), parseInt($targetHeader.attr('headerindex')), 
+					$targetContent.css('display'), useractivated)
+                			if (scrolltoheader){
+                				var sthdelay=(config["collapseprev"])? 20 : 0
+                				clearTimeout(config.sthtimer)
+                				config.sthtimer=setTimeout(function(){ddaccordion.scrollToHeader($targetHeader)}, sthdelay)
+                			}
+                			if (config.postreveal=="gotourl" && directclick){ //if revealtype is "Go to Header URL upon click", and this 												    is a direct click on the header
+                				var targetLink=($targetHeader.is("a"))? $targetHeader.get(0) : $targetHeader.find('a:eq(0)').get(0)
+                				if (targetLink) //if this header is a link
+                					setTimeout(function(){location=targetLink.href}, 200 + (scrolltoheader? 400+sthdelay : 0) ) 
+							//ignore link target, as window.open(targetLink, targetLink.target) doesn't work in FF if 								popup blocker enabled
+                			}
+                		})
+                	},
+                	
+                	collapseit:function($targetHeader, $targetContent, config, isuseractivated){
+                		this.transformHeader($targetHeader, config, "collapse")
+                		$targetContent.slideUp(config.animatespeed, function(){config.onopenclose($targetHeader.get(0), 
+				parseInt($targetHeader.attr('headerindex')), $targetContent.css('display'), isuseractivated)})
+                	},
+                	transformHeader:function($targetHeader, config, state){
+                		$targetHeader.addClass((state=="expand")? config.cssclass.expand : config.cssclass.collapse) //alternate btw "expand" 					and "collapse" CSS classes
+                		.removeClass((state=="expand")? config.cssclass.collapse : config.cssclass.expand)
+                		if (config.htmlsetting.location=='src'){ //Change header image (assuming header is an image)?
+                			$targetHeader=($targetHeader.is("img"))? $targetHeader : $targetHeader.find('img').eq(0) //Set target to 						either header itself, or first image within header
+                			$targetHeader.attr('src', (state=="expand")? config.htmlsetting.expand : config.htmlsetting.collapse) 
+					//change header image
+                		}
+                		else if (config.htmlsetting.location=="prefix") //if change "prefix" HTML, locate dynamically added ".accordprefix" 											  span tag and change it
+                			$targetHeader.find('.accordprefix').empty().append((state=="expand")? config.htmlsetting.expand : 						config.htmlsetting.collapse)
+                		else if (config.htmlsetting.location=="suffix")
+                			$targetHeader.find('.accordsuffix').empty().append((state=="expand")? config.htmlsetting.expand : 						config.htmlsetting.collapse)
+                	},
+                	urlparamselect:function(headerclass){
+                		var result=window.location.search.match(new RegExp(headerclass+"=((\\d+)(,(\\d+))*)", "i")) 
+												//check for "?headerclass=2,3,4" in URL
+                		if (result!=null)
+                			result=RegExp.$1.split(',')
+                		return result //returns null, [index], or [index1,index2,etc], where index are the desired selected header indices
+                	},
+                	getCookie:function(Name){ 
+                		var re=new RegExp(Name+"=[^;]+", "i") //construct RE to search for target name/value pair
+                		if (document.cookie.match(re)) //if cookie found
+                			return document.cookie.match(re)[0].split("=")[1] //return its value
+                		return null
+                	},
+                	setCookie:function(name, value){
+                		document.cookie = name + "=" + value + "; path=/"
+                	},
+			
+                	init:function(config){
+                	document.write('<style type="text/css">\n')
+                	document.write('.'+config.contentclass+'{display: none}\n') //generate CSS to hide contents
+                	document.write('a.hiddenajaxlink{display: none}\n') //CSS class to hide ajax link
+                	document.write('<\/style>')
+                	jQuery(document).ready(function($){
+                		ddaccordion.urlparamselect(config.headerclass)
+                		var persistedheaders=ddaccordion.getCookie(config.headerclass)
+                		ddaccordion.headergroup[config.headerclass]=$('.'+config.headerclass) //remember header group for this accordion
+                		ddaccordion.contentgroup[config.headerclass]=$('.'+config.contentclass) //remember content group for this accordion
+                		ddaccordion.$docbody=(window.opera)? (document.compatMode=="CSS1Compat"? jQuery('html') : jQuery('body')) : jQuery
+				('html,body')
+                		var $headers=ddaccordion.headergroup[config.headerclass]
+                		var $subcontents=ddaccordion.contentgroup[config.headerclass]
+                		config.cssclass={collapse: config.toggleclass[0], expand: config.toggleclass[1]} //store expand and contract CSS 															   classes as object properties
+                		config.revealtype=config.revealtype || "click"
+                		config.revealtype=config.revealtype.replace(/mouseover/i, "mouseenter")
+                		if (config.revealtype=="clickgo"){
+                			config.postreveal="gotourl" //remember added action
+                			config.revealtype="click" //overwrite revealtype to "click" keyword
+                		}
+                		if (typeof config.togglehtml=="undefined")
+                			config.htmlsetting={location: "none"}
+                		else
+                			config.htmlsetting={location: config.togglehtml[0], collapse: config.togglehtml[1], expand: config.togglehtml
+					[2]} //store HTML settings as object properties
+                		config.oninit=(typeof config.oninit=="undefined")? function(){} : config.oninit //attach custom "oninit" event handler
+                		config.onopenclose=(typeof config.onopenclose=="undefined")? function(){} : config.onopenclose //attach custom 																"onopenclose" event handler
+                		var lastexpanded={} //object to hold reference to last expanded header and content (jquery objects)
+                		var expandedindices=ddaccordion.urlparamselect(config.headerclass) || ((config.persiststate && persistedheaders
+				!=null)? persistedheaders : config.defaultexpanded)
+                		if (typeof expandedindices=='string') //test for string value (exception is config.defaultexpanded, which is an array)
+                			expandedindices=expandedindices.replace(/c/ig, '').split(',') //transform string value to an array (ie: 													"c1,c2,c3" becomes [1,2,3]
+                		if (expandedindices.length==1 && expandedindices[0]=="-1") //check for expandedindices value of [-1], indicating 												     persistence is on and no content expanded
+                			expandedindices=[]
+                		if (config["collapseprev"] && expandedindices.length>1) //only allow one content open?
+                			expandedindices=[expandedindices.pop()] //return last array element as an array (for sake of jQuery.inArray())
+                		if (config["onemustopen"] && expandedindices.length==0) //at least one content should be open at all times and none 											          are, open 1st header
+                			expandedindices=[0]
+                		$headers.each(function(index){ //loop through all headers
+                			var $header=$(this)
+                			if (/(prefix)|(suffix)/i.test(config.htmlsetting.location) && $header.html()!=""){ //add a SPAN element to 						header depending on user setting and if header is a container tag
+                				$('<span class="accordprefix"></span>').prependTo(this)
+                				$('<span class="accordsuffix"></span>').appendTo(this)
+                			}
+                			$header.attr('headerindex', index+'h') //store position of this header relative to its peers
+                			$subcontents.eq(index).attr('contentindex', index+'c') //store position of this content relative to its peers
+                			var $subcontent=$subcontents.eq(index)
+                			var $hiddenajaxlink=$subcontent.find('a.hiddenajaxlink:eq(0)') //see if this content should be loaded via ajax
+                			if ($hiddenajaxlink.length==1){
+                				$header.data('ajaxinfo', {url:$hiddenajaxlink.attr('href'), cacheddata:null, status:'none'}) //store 							info about this ajax content inside header
+                			}
+                			var needle=(typeof expandedindices[0]=="number")? index : index+'' //check for data type within 					expandedindices array- index should match that type
+                			if (jQuery.inArray(needle, expandedindices)!=-1){ //check for headers that should be expanded automatically 						(convert index to string first)
+                				ddaccordion.expandit($header, $subcontent, config, false, false, !config.animatedefault) //3rd last 							param sets 'isuseractivated' parameter, 2nd last sets isdirectclick, last sets skipanimation param
+                				lastexpanded={$header:$header, $content:$subcontent}
+                			}  //end check
+                			else{
+                				$subcontent.hide()
+                				config.onopenclose($header.get(0), parseInt($header.attr('headerindex')), $subcontent.css('display'), 							false) //Last Boolean value sets 'isuseractivated' parameter
+                				ddaccordion.transformHeader($header, config, "collapse")
+                			}
+                		})
+				
+                		//if (config["scrolltoheader"] && lastexpanded.$header)
+                			//ddaccordion.scrollToHeader(lastexpanded.$header)
+                		$headers.bind("evt_accordion", function(e, isdirectclick, scrolltoheader){ //assign CUSTOM event handler that 					expands/ contacts a header
+                				var $subcontent=$subcontents.eq(parseInt($(this).attr('headerindex'))) //get subcontent that should 							be expanded/collapsed
+                				if ($subcontent.css('display')=="none"){
+                					ddaccordion.expandit($(this), $subcontent, config, true, isdirectclick, false, 								scrolltoheader) //2nd last param sets 'isuseractivated' parameter
+                					if (config["collapseprev"] && lastexpanded.$header && $(this).get(0)!=
+							lastexpanded.$header.get(0)){ //collapse previous content?
+                						ddaccordion.collapseit(lastexpanded.$header, lastexpanded.$content, config, true) 
+								//Last Boolean value sets 'isuseractivated' parameter
+                					}
+                					lastexpanded={$header:$(this), $content:$subcontent}
+                				}
+                				else if (!config["onemustopen"] || config["onemustopen"] && lastexpanded.$header && $(this).get(0)
+						!=lastexpanded.$header.get(0)){
+                					ddaccordion.collapseit($(this), $subcontent, config, true) //Last Boolean value sets 															    'isuseractivated' parameter
+                				}
+                 		})
+                		$headers.bind(config.revealtype, function(){
+                			if (config.revealtype=="mouseenter"){
+                				clearTimeout(config.revealdelay)
+                				var headerindex=parseInt($(this).attr("headerindex"))
+                				config.revealdelay=setTimeout(function(){ddaccordion.expandone(config["headerclass"], headerindex, 							config.scrolltoheader)}, config.mouseoverdelay || 0)
+                			}
+                			else{
+                				$(this).trigger("evt_accordion", [true, config.scrolltoheader]) //last parameter indicates this is a 															  direct click on the header
+                				return false //cancel default click behavior
+                			}
+                		})
+                		$headers.bind("mouseleave", function(){
+                			clearTimeout(config.revealdelay)
+                		})
+                		config.oninit($headers.get(), expandedindices)
+                		$(window).bind('unload', function(){ //clean up and persist on page unload
+                			$headers.unbind()
+                			var expandedindices=[]
+                			$subcontents.filter(':visible').each(function(index){ //get indices of expanded headers
+                				expandedindices.push($(this).attr('contentindex'))
+                			})
+                			if (config.persiststate==true && $headers.length>0){ //persist state?
+                				expandedindices=(expandedindices.length==0)? '-1c' : expandedindices //No contents expanded, indicate 							that with dummy '-1c' value?
+                				ddaccordion.setCookie(config.headerclass, expandedindices)
+                			}
+                		})
+                	})
+                	}
+                }
+
+                //preload any images defined inside ajaxloadingmsg variable
+                ddaccordion.preloadimages(jQuery(ddaccordion.ajaxloadingmsg).filter('img'))	
+                        </script>
+                        <script type="text/javascript">
+		
+                       ddaccordion.init({
+              	headerclass: "headerbar", //Shared CSS class name of headers group
+              	contentclass: "submenu", //Shared CSS class name of contents group
+              	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+              	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+              	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+              	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+              	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+              	animatedefault: false, //Should contents open by default be animated into view?
+              	persiststate: true, //persist state of opened contents within browser session?
+              	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively 			["class1", "class2"]
+              	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", 			"html2"] (see docs)
+              	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+              	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+              		//do nothing
+              	},
+              	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+              		//do nothing
+              	}
+              })
+		 ddaccordion.init({
+              	headerclass: "header1", //Shared CSS class name of headers group
+              	contentclass: "submenu1", //Shared CSS class name of contents group
+              	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+              	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+              	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+              	defaultexpanded: [3], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+              	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+              	animatedefault: false, //Should contents open by default be animated into view?
+              	persiststate: true, //persist state of opened contents within browser session?
+              	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively 			["class1", "class2"]
+              	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", 			"html2"] (see docs)
+              	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+              	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+              		//do nothing
+              	},
+              	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+              		//do nothing
+              	}
+              })
+		
+			</script>
+                        </style>
+                        <div class="urbangreymenu">
+                            <h3 class="headerbar" headerindex="0h">
+                                <a href="#">
+
+                                    home
+
+                                </a>
+                            </h3>
+                            <ul class="submenu" contentindex="0c" style="display: none;">
+                            </ul>
+                            <div class="urbangreymenu1">
+                                <h3 class="headerbar" headerindex="1h">
+                                    <a href="/lecture_index">
+
+                                        Lecture Notes
+
+                                    </a>
+                                </h3>
+                                <ul class="submenu" contentindex="1c" style="display: none;">
+                                    <h3>
+                                        <a class="header1" href="/phy_index" headerindex="0h">
+
+                                            CLASS XI
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="0c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="1h">
+
+                                            CLASS XII
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="1c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="2h">
+
+                                            IIT JEE
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="2c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="urbangreymenu1">
+                                <h3 class="headerbar" headerindex="2h">
+                                    <a href="/lecture_index">
+
+                                        Solutions
+
+                                    </a>
+                                </h3>
+                                <ul class="submenu" contentindex="2c" style="display: none;">
+                                    <h3>
+                                        <a class="header1" href="/phy_index" headerindex="3h">
+
+                                            CLASS XI
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="3c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="4h">
+
+                                            CLASS XII
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="4c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="5h">
+
+                                            IIT JEE
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="5c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="urbangreymenu1">
+                                <h3 class="headerbar" headerindex="3h">
+                                    <a href="/lecture_index">
+
+                                        Test series
+
+                                    </a>
+                                </h3>
+                                <ul class="submenu" contentindex="3c" style="display: none;">
+                                    <h3>
+                                        <a class="header1" href="/phy_index" headerindex="6h">
+
+                                            CLASS XI
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="6c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="7h">
+
+                                            CLASS XII
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="7c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index"></a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="8h">
+
+                                            IIT JEE
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="8c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="urbangreymenu1">
+                                <h3 class="headerbar selected" headerindex="4h">
+                                    <a href="/lecture_index">
+
+                                        Video Lecture
+
+                                    </a>
+                                </h3>
+                                <ul class="submenu" contentindex="4c" style="display: block;">
+                                    <h3>
+                                        <a class="header1" href="/phy_index" headerindex="9h">
+
+                                            CLASS XI
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="9c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="10h">
+
+                                            CLASS XII
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="10c" style="display: none;">
+                                        <li>
+                                            <a href="phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1 selected" href="/maths_index" headerindex="11h">
+
+                                            IIT JEE
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="11c" style="display: block;">
+                                        <li>
+                                            <a href="phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="math_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="urbangreymenu1">
+                                <h3 class="headerbar" headerindex="5h">
+                                    <a href="/lecture_index">
+
+                                        Class Room
+
+                                    </a>
+                                </h3>
+                                <ul class="submenu" contentindex="5c" style="display: none;">
+                                    <h3>
+                                        <a class="header1" href="/phy_index" headerindex="12h">
+
+                                            CLASS XI
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="12c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/chem_index" headerindex="13h">
+
+                                            CLASS XII
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="13c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index"></a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <a class="header1" href="/maths_index" headerindex="14h">
+
+                                            IIT JEE
+
+                                        </a>
+                                    </h3>
+                                    <ul class="submenu1" contentindex="14c" style="display: none;">
+                                        <li>
+                                            <a href="/phy_index">
+
+                                                 Physics
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chem_index">
+
+                                                 Chemestry
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/maths_index">
+
+                                                 Matematics
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+
+                 mobile menu 
+
+                -->
+                <nav class="nav">
+                    <ul>
+                        <li class="current">
+                            <a href="#">
+
+                                HOME
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                LECTURE NOTES
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                SOLUTIONS
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                TEST SERIES
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                VIDEO LECTURE
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+
+                                CLASS ROOM
+
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--
+
+             social site 
+
+            -->
+            <div class="w-clearfix_social_site_block">
+                <a class="w-inline-block social_link1" href="#">
+                    <img class="facebook_logo" alt="facebook-icon.png" src="/static/images/facebook_logo.png"></img>
+                </a>
+                <a class="w-inline-block social_link3" href="#">
+                    <img class="twitter_logo" alt="twitter-icon.png" src="/static/images/tweetr_logo.png"></img>
+                </a>
+                <a class="w-inline-block social_link2" href="#">
+                    <img class="mail_logo" alt="email-icon.png" src="/static/images/gmail_logo.png"></img>
+                </a>
+            </div>
+            <!--
+
+            end of social site 
+
+            -->
+        </div>
+        <!--end of left_side_bar -->
+	<!-- start of center column -->
+	<div class="w-col w-col-8 center_column">
+   <div class="w-container container1">
+    <div class="header_background"></div>
+     <div class="fixed_header">
+	<a class="button contact_number" href="#">1800-3000-7774</a>
+	<a class="button contact_us" href="/contact">CONTACT US</a>
+	<a class="button about_us" href="/about_us">ABOUT US</a>
+     	
+	<!-- login and sign up starts here-->
+ 	<!-- login div -->
+	<div id="container">
+	    <div id="topnav" class="topnav"> <a href="login" class="signin"><span>SIGN IN</span></a></div>
+		<fieldset id="signin_menu">
+		  <form method="post" name="form" id="signin" action="/login">
+			<label style="color: #2E006F; margin-top: 72px; font-size: 13px; margin-left: -5px;" for="username"><b>User Name</b>
+			</label><br><br>
+			<input id="username" tabindex="4" title="username" style="background: none repeat scroll 0% 0% transparent; 
+			position: absoulte;margin-top: -13px; margin-right: -37px; margin-left: 64px;border: 1px solid rgb(170, 204, 238);" value="" name="username" type="text"><br><br>
+			<p></p>
+			<p>
+			<label style="color: #2E006F; margin-top: 18px; margin-left: -5px;" for="password"><b>Password</b></label><br><br>
+			<input id="password" name="password" value="" title="password" style="background: none repeat scroll 0% 0% transparent;margin-top: -65px;margin-left: 64px; position: absolute; border: 1px solid rgb(170, 204, 238);" tabindex="5" type="password">
+			</p>
+
+			  <label>Remember me</label>
+			  <input name="remember_me" value="1" tabindex="7" type="checkbox"><br>
+			  <input id="signin_submit" value="Sign in" tabindex="6" type="submit"><br>
+			</p>
+			<p class="forgot"> <a href="#" id="resend_password_link">Forgot your password?</a> </p>
+			<p class="forgot-username"> <a id="forgot_username_link" title="If you don't remember your username, try logging in with your email" href="#">Forgot your username?</a> </p>
+		  </form>
+		</fieldset>
+	</div>
+
+
+         <!-- Sign up div -->
+	 <div class="register"><a href="login" class="signup"><span>SIGN UP</span></a>
+	    <fieldset id="signup_menu"> 
+			<form method="post" id="signup" action="/signup">
+			<p class="text"><b>Register Yourself Here!!</b></p><b>     
+			Name:<input id="name" name="name" style="background: none repeat scroll 0% 0% rgb(225, 240, 233);" type="text">
+			User name:<input name="user_name" style="background: none repeat scroll 0% 0% rgb(225, 240, 233);" type="text">	
+			Email:<input name="email" style="border-radius: 0px; width: 203px; height: 26px;
+			background: none repeat scroll 0% 0% rgb(225, 240, 233);" type="email">	
+			Password:<input name="pwd" style="background: none repeat scroll 0% 0% rgb(225, 240, 233);" type="password">
+			Password Again:<input name="cpassword" style="background: none repeat scroll 0% 0% rgb(225, 240, 233);" type="password">
+			&nbsp;&nbsp;&nbsp;<input style="background: none repeat scroll 0% 0% rgb(225, 240, 233); margin-top: 12px; 
+			width: 86px; 
+			height: 28px; margin-left: 48px;" value="Sign up" <="" fieldset="" type="submit">
+	 </b></form></fieldset></div><b>
+	</b></div><!--end of container div --><b>
+       </b></div><!-- end of fixed header div-->
+       <!--login and sign up section ends here-->
+       
+	<!--Blackboard notice section starts here-->
+	<div class="black_board">
+	    <img class="black_board container" src="/static/images/blackboard.jpg" alt="52e8b67c8521fb2411000014_blackboard.jpg" height="142.387" width="460.4">
+	    <div class="w-embed w-script news">          
+		<div id="myTypingText"> NEW DELHI: The candidates opting for the online mode of the Joint Entrance Examination (main) 2014 will now get the 				     question paper with the answers marked on it after the exam. According to Central Board of Secondary Education, the 				     paper will be mailed to all the candidates.</div>
+		     <script type="text/javascript" language="javascript">
+		      var myString = " NEW DELHI: The candidates opting for the online mode of the Joint Entrance Examination (main) 2014 will now get the 				     question paper with the answers marked on it after the exam. According to Central Board of Secondary Education, the 				     paper will be mailed to all the candidates.";
+		      var myArray = myString.split("");
+		      var loopTimer;
+		      function frameLooper() {
+		      if(myArray.length > 0) {
+		      document.getElementById("myTypingText").innerHTML += myArray.shift();
+		      } else {
+		      clearTimeout(loopTimer); 
+		      }
+		      loopTimer = setTimeout('frameLooper()',60);
+		      }
+		      frameLooper();
+		      </script>
+		</div>
+	    </div>
+	
+	<!--Blackboard notice section ends here-->
+
+
+    <!--closing of container1 -->
+  
+	<!--Demo video section starts here-->
+       <div class="demo_video">
+	
+	  
+	    <div class="container">
+		<!-- Top Navigation -->
+		<section id="grid" class="grid clearfix">
+			<a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+			 <figure>
+			 <img src="/static/images/1.png">
+			 <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M180,160C180,160,0,218,0,218C0,218,0,0,0,0C0,0,180,0,180,0C180,0,180,160,180,160"></path><desc>Created with Snap</desc><defs></defs></svg>
+			      <figcaption>
+				<h2>PHYSICS</h2>
+				<p>Demo Videos</p>
+				<button>VIEW</button>
+				</figcaption>
+				</figure>
+				</a>
+			<a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+			  <figure>
+			  <img src="/static/images/3.png">
+			  <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"></path><desc>Created with Snap</desc><defs></defs></svg>
+				<figcaption>
+				  <h2>CHEMESTRY</h2>
+				  <p>Demo Videos</p>
+				  <button>VIEW</button>
+				</figcaption>
+			   </figure>
+			</a>
+			<a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+			  <figure>
+				<img src="/static/images/5.png">
+				<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"></path><desc>Created with Snap</desc><defs></defs></svg>
+				<figcaption>
+					<h2>MATHEMATICS</h2>
+					<p>Demo Videos</p>
+					<button>VIEWS</button>
+				</figcaption>
+			   </figure>
+			</a>
+		</section>
+	    </div><!-- /container -->
+	    <script src="/static/js/demo_test.js" type="text/javascript"></script>
+	  
+	
+       </div>
+<!--Testimonials section starts here-->
+       
+	  
+	    <!-- include jQuery library -->
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	    <!-- include Cycle plugin -->
+	    <script type="text/javascript" src="https://filemasbayu.googlecode.com/files/jquery.cycle.all.latest.js"></script>
+	    <script type="text/javascript">
+	      $(document).ready(function() {
+	      $('#testimonials')
+		   .cycle({
+		            fx: 'scrollRight', // choose your transition type, ex: fade, scrollUp, scrollRight, shuffle
+	      });
+	      });
+	    </script>
+	    <link rel="stylesheet" type="text/css" href="/static/css/testimonials.css">
+	  
+	
+	  <div style="position: relative; overflow: hidden;" id="testimonials">
+	    <blockquote style="position: absolute; top: 0px; left: 778px; display: none; z-index: 3; opacity: 1; width: 760px; height: 108px;"><p>" I did a 1 year course at thinkIIT and have great regards for the faculty at thinkIIT &amp; owe my success to them. Mr. 
+				Manish Kumar was a wonderful teacher and a great motivator throughout the  years. I recommend thinkIIT to every IIT 
+				aspirant. "
+	    			<cite>–Yashodhan Kanoria -(Screening Rank - 1 A. I. R. - 2 in IIT - JEE )</cite>
+	    </p></blockquote>
+	 
+	    <blockquote style="position: absolute; top: 0px; left: 778px; display: none; z-index: 3; opacity: 1; width: 760px; height: 108px;"><p>"I attended 1 years course of thinkIIT and was greatly benefited by the same . After 2 months Manish Sir advised us to 
+				focus only on IIT and he used to tell us that we will be in top 100 for sure... to be very honest . I never believed 
+				him till we got the results. The course content was excellent and went well along with our college curriculum."
+				<cite>–Vibhor Rastogi -( A. I. R - 6 9 in IIT - JEE )</cite>
+	    </p></blockquote>
+	 
+	    <blockquote style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1; width: 760px; height: 108px;"><p>" I attended one lecture of Mr. Manish Kumar and decided to join thinkIIT despite the fact that I was being offered huge 
+				concessions by various other classes. The team at thinkIIT is simply the best in every sense. The credit of my 
+				success goes to thinkIIT, especially Mr. Praveen Tyagi."
+				<cite>–Manmohan Chandrakar- ( A. I. R. - 2 1 4 in IIT - JEE)</cite>
+	    </p></blockquote>
+	 </div><!--end .testimonials2-->
+	
+       
+
+
+	  
+	  
+	  
+	     <div class="footer">
+		<div class="footer_bar">
+		  <div class="w-col w-col-3 w-clearfix thinkiit">
+		     <h4 class="thinlkiit_footer">thinkIIT<br>.............</h4>
+		       <a class="button footer_thinkiit_content2" href="#">Why Us</a>
+		       <a class="button footer_thinkiit_content3" href="#">Team</a>
+		       <a class="button footer_thinkiit_content4" href="/contact">Contact Us</a>
+		       <a class="button footer_thinkiit_content5" href="#">Partner With Us</a>
+		  </div>
+		  <div class="w-col w-col-3 w-clearfix footer_column2">
+		       <h4 class="thinkiit_polcyinfo footer_polacyinfo">POLICY INFO<br>........................</h4>
+		       <a class="button footer_polacyinfo_content1" href="/term_cond">Terms and Conditions</a>
+		       <a class="button footer_polacyinfo_content2" href="/privacy_policy">Privacy Policy</a>
+		       <a class="button footer_polacyinfo_content3" href="/cancellation_return">Cancellation and Return</a>
+		       <a class="button footer_polacyinfo_content4" href="#">Sitemap</a>
+		 </div>
+		 <div class="w-col w-col-3 w-clearfix footer_column3">
+		      <h4 class="footer_help">HELP<br>..........</h4>
+		      <a class="button footer_help_content1" href="#">FAQs</a>
+		 </div>
+		 <div class="w-col w-col-3 footer_column4">
+		      <h4 class="footer_follow_us_on">FOLLOW US ON<br>..............................</h4>
+		     
+		 </div>
+		</div>
+	     
+
+	   
+	 </div>
+	</div>
+    </div>
+  <!-- end of center_column -->

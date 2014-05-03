@@ -1,0 +1,84 @@
+		#one{
+			width:50px;
+			height:50px;
+			border:1px solid red;
+			float:right;
+			transform: rotateY(90deg);
+		   	transform-origin: left center;
+		    
+		    	animation-delay: -17s;
+			animation-duration: 3s;
+			animation-name: popupanim;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+	#first:hover{
+	      width:500px:
+	      height:500px;
+		}
+
+	#first{
+	      width:100px;
+		}
+		@keyframes popupanim
+		{
+	    		from {
+				transform: rotateY(60deg);
+	    		     }
+
+	    		to {
+				transform: rotateY(0deg);
+	    			}
+		}
+
+
+	
+		#two{
+			width:50px;
+			height:50px;
+			border:1px solid red;
+			float:right;
+			transform: rotateY(90deg);
+		   	transform-origin: left center;
+		    
+		    	animation-delay: 2s;
+			animation-duration: 3s;
+			animation-name: popupanim;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+	       
+		     }
+
+	#second {
+			transform: rotateY(90deg);
+		   	transform-origin: left center;
+		    
+		    	animation-delay: 2s;
+			animation-duration: 3s;
+			animation-name: popupanim;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+	       
+		     }
+
+
+
+	.second_row{
+	       margin:1px 1px 1px 1px;
+
+	}
+	.faces{
+		margin-right: 0px;
+		margin-bottom: -218px;
+	}
+	.testi{
+	        margin-left:0px;
+	        position:fixed;
+	        margin-top: 520px;
+           
+	}
+
+
+
+
+

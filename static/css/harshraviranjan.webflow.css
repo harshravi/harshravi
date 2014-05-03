@@ -1,0 +1,800 @@
+
+body{
+	font-family:Tahoma, Arial, sans-serif;
+	padding:20px;
+    background-image: url(/static/images/bg.jpg);
+    background-repeat: repeat;
+	}
+h1 {
+  margin: 10px 0px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+}
+h2 {
+  margin: 10px 0px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+}
+h3 {
+  margin: 7px 0px 10px;
+  font-size: 18px;
+  line-height: 12px;
+  font-weight: 700;
+  text-transform: none;
+}
+h4 {
+  margin: -16px 0px 19px;
+  font-size: 18px;
+  line-height: 12px;
+  color:white;
+  font-weight: 700;
+  text-indent: 0px;
+}
+h5 {
+  margin: 10px 0px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin: 10px 0px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-bottom: 5px;
+}
+/* this ".sidebar label" css code is for "language" used in other files */
+.sidebar label{
+ color:black ;
+ }
+
+
+.button {
+display: inline-block;
+  width: 174px;
+  padding: 4px 2px 4px 5px;
+  float: left;
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+  line-height: 18px;
+}
+
+
+.header_background{
+height: 75px;
+width: 83%;
+position: fixed;
+z-index: 100000;
+margin-top: -43px;
+background-image: url(/static/images/bg.jpg);
+background-repeat: repeat;
+}
+
+
+.button.footer_thinkiit_content2 {
+  margin-top: 10px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 0px;
+}
+.button.footer_thinkiit_content3 {
+  margin-top: -6px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 22px;
+}
+.button.footer_thinkiit_content4 {
+  margin-top: -9px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 7px;
+}
+.button.footer_thinkiit_content5 {
+  margin-top: -7px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+}
+.button.footer_polacyinfo_content1 {
+  width: 147px;
+  height: 25px;
+  margin-top: 10px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 0px;
+}
+.button.footer_polacyinfo_content2 {
+  margin-top: -13px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 0px;
+}
+.button.footer_polacyinfo_content3 {
+  margin-top: 0px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 0px;
+}
+.button.footer_polacyinfo_content4 {
+  margin-top: 6px;
+  margin-left: -3px;
+  color: white;
+  font-size: 11px;
+  line-height: 0px;
+}
+.button.footer_help_content1 {
+  margin-top: 6px;
+  margin-left: -2px;
+  color: white;
+  font-size: 11px;
+  line-height: 4px;
+}
+.button.horizontal_column1 {
+  width: 77px;
+  height: 22px;
+  border-style: solid;
+  border-width: 0px 1px 0px 0px;
+  border-color: black #e3b8b8 black black;
+}
+.button.horizontal_column2 {
+  width: 96px;
+  margin-left: -59px;
+  border-right-style: none;
+  border-right-width: 0px;
+}
+.button.horizontal_column3 {
+  width: 125px;
+  height: 21px;
+  margin-left: -113px;
+  padding-left: 32px;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+.button.horizontal_column4 {
+  width: 157px;
+  height: 22px;
+  margin-left: -128px;
+  padding-left: 35px;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+.button.horizontal_column5 {
+  width: 177px;
+  height: 22px;
+  margin-left: -113px;
+  padding-right: 3px;
+  padding-left: 44px;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+.button.horizontal_column6 {
+  width: 226px;
+  height: 22px;
+  margin-left: -77px;
+  padding-right: 0px;
+  padding-left: 32px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  
+}
+.row {
+  position: static;
+  margin-top: -20px;
+  margin-bottom:0px;
+  
+}
+.left_
+{
+  padding-right: 10px;
+}
+.side_bar_block {
+  position: fixed;
+  width: 13.34%;
+  height: 433px;
+  margin-top: 12px;
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: center;
+  
+
+}
+.thinkiit_logo {
+  width: 183px;
+  margin-top: -10px;
+  margin-bottom: 13px;
+  margin-left: -7px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  float: left;
+  
+}
+
+.menu_block {
+  width: 187px;
+  margin-top: 37px;
+}
+
+.bar_contents {
+  width: 160px;
+  height: 236px;
+  margin-top: -118px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 16px;
+  
+}
+.social_link1{
+  width: 40px;
+  height: 36px;
+  margin-top: 180px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-left: 7px;
+  float: left;
+  border-radius: 60px;
+  background-color: #90d200;
+}
+.social_link2{
+  width: 40px;
+  height: 36px;
+  margin-top: 180px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-left: 8px;
+  float: left;
+  border-radius: 60px;
+  background-color: #90d200;
+}
+.social_link3{
+  width: 40px;
+  height: 36px;
+  margin-top: 180px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-left: 4px;
+  float: left;
+  border-radius: 60px;
+  background-color: #90d200;
+}
+.social_link1:hover {
+  background-color: #0c69ac;
+}
+.social_link2:hover {
+  background-color: #d64937;
+}
+.social_link3:hover {
+  background-color: #00acee;
+}
+.facebook_logo {
+  width: 25px;
+  height: 21px;
+  margin-top: 3px;
+  margin-left: 0px;
+}
+.mail_logo {
+  width: 24px;
+  margin-left: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.twitter_logo {
+  width: 30px;
+  margin-top: -2px;
+  margin-left: 2px;
+}
+
+.w-clearfix_social_site_block{
+  margin-top: 389px;
+  margin-left: -5px;
+  width: 198px;
+  position: fixed;
+  height:0px;
+		}
+.container1 {
+  display: block;
+  margin-top: 50px;%
+  padding-right: 0px;
+  
+}
+.container1.contact_form_content {
+  margin-top: -13px;
+}
+.about_us {
+  width: 96px;
+  height: 18px;
+  margin: -23px -15px 0px 509px;
+  padding: 2px 0px 0px;
+  float: right;
+  font-size: 14px;
+  text-transform: uppercase;
+  
+}
+
+.contact_us {
+  width: 91px;
+  height: 18px;
+  margin-top: -23px;
+  margin-right: 205px;
+  margin-left: 28px;
+  padding: 2px 0px 0px;
+  float: right;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+
+.contact_number {
+  width: 169px;
+height: 18px;
+margin-top: -23px;
+margin-right: -37px;
+margin-left: -3px;
+padding: 2px 17px 0px 1px;
+float: right;
+text-transform: uppercase;            
+}
+.black_board {
+  position: absolute;
+  width: auto;
+  height: 147px;
+  margin-top: 75px;
+  margin-right: -73px;
+  margin-left: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  float: none;
+  clear: none;
+  
+}
+.black_board.container {
+display: block;
+width: 876px;
+height: 142px;
+max-width: 1524px;
+margin: -4px 3px 1px 2px;
+padding-right: 60px;
+padding-bottom: 2px;
+opacity: 1;
+padding-left: 41px;
+  
+}
+.center_column {
+  position: static;
+  height: auto;
+  margin-top: -30px;
+  margin-bottom: 0px;
+  padding-top: 22px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  
+}
+    
+.right_side_bar {
+  margin-top: 00px;
+  margin-left:0px;
+  padding-right:0px;
+  width:0px;
+  background:transparent;
+  
+}
+
+.footer {
+  position: static;
+  overflow-x: visible;
+  overflow-y: visible;
+  width: 100%;
+  height: 125px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  float: none;
+  background-color: #2f3034;
+}
+.footer_bar {
+  margin-top: -1px;
+  margin-bottom: 0px;
+  float: none;
+}
+.thinkiit {
+  position: static;
+  display: block;
+}
+.footer_column2 {
+  margin-top: 1px;
+}
+.footer_column3 {
+  padding-left: 65px;
+}
+.footer_column4 {
+  padding-left: 35px;
+}
+
+.thinlkiit_footer {
+  margin-top: -10px;
+  padding-top: 1px;
+  font-size: 15px;
+  line-height: 7px;
+}
+.thinkiit_polcyinfo {
+  margin-top: -10px;
+}
+.thinkiit_polcyinfo.footer_polacyinfo {
+  font-size: 15px;
+  line-height: 7px;
+}
+.footer_help {
+  margin-top: -10px;
+  font-size: 15px;
+  line-height: 7px;
+}
+.footer_follow_us_on {
+  margin-top: -10px;
+  font-size: 15px;
+  line-height: 7px;
+}
+.side_bar_menu {
+  margin-top: 210px;
+}
+.fixed_header{
+position: fixed;
+z-index: 100000;
+margin-left: -442px;
+margin-top: 32px;
+height: 10px;
+}
+  .about_us {
+	  display: inline;
+margin-right: 553px;
+margin-left: 8px;
+opacity: 1;
+color: #B3B3B3;
+text-decoration: none;
+text-transform: none;
+  }
+  .about_us:hover {
+    color: #ac2c5f;
+  }
+  .contact_us {
+margin-right: 445px;
+margin-left: 0px;
+width: 115px;
+color: #B3B3B3;
+text-decoration: none;
+  }
+  .contact_us:hover {
+    color: #ac2c5f;
+  }
+  .contact_number {
+margin-right: 287px;
+float: right;
+color: #B3B3B3;
+letter-spacing: 1px;
+text-decoration: none;
+}
+  
+  .contact_number:hover {
+    color: #ac2c5f;
+  }
+
+.register{
+font-size: 14px;
+margin-right: 15px;
+width: 61px;
+}
+ .nav{
+        display:none;
+    }
+/* sicial icon */
+.social_buttons{
+    position:fixed;
+    margin-left:3px;
+}
+.icon-button {
+	background-color: #eee;
+	border-radius: 2.6rem;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2.0rem;
+	height: 2.6rem;
+	line-height: 3.6rem;
+	margin: 0 5px;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	width: 2.6rem;
+    margin-top:0px;
+}
+.social_logo{
+    margin-top:180px;
+}
+/* Circle */
+.icon-button span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 0;
+    
+}
+.icon-button:hover span {
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 2.6rem;
+	margin: -1.3rem;
+}
+.twitter span {
+	background-color: #4099ff;
+}
+.facebook span {
+	background-color: #3B5998;
+}
+.google-plus span {
+	background-color: #db5a3c;
+}
+
+/* Icons */
+.icon-button i {
+	background: none;
+	color: white;
+	height: 3.6rem;
+	left: 0;
+	line-height: 3.6rem;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 3.6rem;
+	z-index: 10;
+}
+.icon-button .icon-twitter {
+	color: #4099ff;
+}
+.icon-button .icon-facebook {
+	color: #3B5998;
+}
+.icon-button .icon-google-plus {
+	color: #db5a3c;
+}
+.icon-button:hover .icon-twitter,
+.icon-button:hover .icon-facebook,
+.icon-button:hover .icon-google-plus {
+	color: white;
+}
+.res_about, .res_about:hover {
+	text-decoration:none;
+	color:#FFF;
+	cursor:text;
+}
+@media only screen and (min-width : 220px) 
+and (max-width : 480px) {
+.header_background{
+ margin-left:-10px;
+ width:100%;
+
+}
+ .nav{
+        display:block;
+    }
+  .footer {
+  position: static;
+  width: 115%;
+  margin-bottom: 0px;
+  margin-left: -18px;
+  height: 204px;
+  padding-bottom: 25px;
+  margin-top:200px;      
+
+  background-color: #2f3034;
+}
+    .thinkiit{
+        margin-left:-15px;
+    }
+.footer_column2 {
+  margin-top: -90px;
+  margin-left:129px;
+}
+.footer_column3 {
+  margin-left: -71px;
+  margin-top:40px
+}
+.footer_column4 {
+  margin-left: 100px;
+  margin-top:-25px
+}
+.black_board {
+  position: absolute;
+  z-index:-1;
+  max-width: 480px !important;
+  height: auto;
+  width:100%;
+  margin-top: 200px;
+  margin-left: -50px;
+  padding-right: 0px;
+  padding-left: 0px;
+  
+ }
+.black_board.container {
+  margin-top:-80px; 
+  width:135%;
+  margin-left:-0px;
+  height:150px;
+}
+ .side_bar_bock {
+  width: 39.3%;
+  margin-top: -10px;
+  margin-left: -14px;
+ }
+  .social_link1 {
+  width: 20px;
+  height:20px;
+  margin-top: -388px;
+  margin-left: 190px;
+  position:relative;
+  z-index:1000000;
+        
+ }
+  .social_link2 {
+  width: 20px;
+  height:20px;
+  margin-top: -388px;
+  margin-left: 250px;
+  position:relative;
+  z-index:1000000;
+   } 
+      .social_link3 {
+  width: 20px;
+  height:20px;
+  margin-top: -388px;
+  margin-left: 220px;
+  position:relative;
+  z-index:1000000;
+        
+ }
+ .facebook_logo {
+ width: 17px;
+  margin-top: -2px;
+  margin-left: -3px;
+  height:14px;
+ }
+.mail_logo {
+  width: 17px;
+  height:17px;
+  margin-top: -4px;
+  margin-left: -3px;
+ }
+.twitter_logo {
+  width: 17px;
+  height:17px;
+  margin-top: -4px;
+  margin-left: -0.3px;
+ }
+.side_bar_menu{
+    margin-top:0px;
+}
+    .thinkiit_logo {
+    position:absolute;
+    z-index:1000000;
+    margin-left:-13px;
+    margin-top:0px;
+
+}
+    .side_bar_block {
+    padding-right:80px;
+    width:80px
+    }
+/* nav for menu_480 */
+   
+    .nav {
+		position: relative;
+		min-height: 40px;
+        z-index:1000000;
+	}	
+	.nav ul {
+		width: 275px;
+		padding: 10px 0;
+		position: absolute;
+		top: -60px;
+		left: -15px;
+		border: solid 1px #aaa;
+		background: #606060 url(/static/images/icon-menu.png) no-repeat 10px 11px;
+		background-size:30px 30px;
+        background-position: right center;
+        border-radius: 5px;
+		box-shadow: 0 1px 2px rgba(0,0,0,.3);
+	}
+	.nav li {
+		display: none; /* hide all <li> items */
+		margin-top: -0px;
+        height:30px;
+      
+        
+	}
+	.nav .current {
+		display: block; /* show only current <li> item */
+        margin-top:-13px;
+        margin-bottom:-9px
+    }
+	.nav a {
+		display: block;
+		padding: 15px 5px 5px 3px;
+		text-align: left;
+        margin-top:-10px
+        
+	}
+	.nav .current a {
+		background: none;
+		color: white;
+        text-decoration:none;
+        font-weight:bold;
+        font-size:18px;
+        text-align:center
+       
+	}
+
+	/* on nav hover */
+	.nav ul:hover {
+		background-image: none;
+	}
+	.nav ul:hover li {
+		display: block;
+		margin: 0 0 5px;
+        text-decoration:none;
+        
+	}
+	.nav ul:hover .current {
+		background: url(/static/images/icon-check.png) no-repeat 10px 7px;
+        background-size:30px 30px;
+        background-position: right;
+    }
+
+	/* right nav */
+	.nav.right ul {
+		left: auto;
+		right: 0;
+	    
+    }
+
+	/* center nav */
+	.nav.center ul {
+		left: 50%;
+		margin-left: -90px;
+	}
+
+}
+
+
+
+
+

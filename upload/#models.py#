@@ -1,0 +1,38 @@
+from django.db import models
+
+# Create your models here.
+
+class user_details(models.Model):
+    user_name=models.CharField(max_length = 50, primary_key=True)
+    full_name=models.CharField(max_length = 50)
+    email=models.EmailField(max_length = 50)
+    password=models.CharField(max_length = 50)
+    phone=models.IntegerField(max_length = 10)
+    state=models.CharField(max_length = 50)
+    image=models.ImageField(upload_to=".")
+    
+
+# Model for subject  
+class subject_details(models.Model):
+    subject_name=models.CharField(max_length = 50)
+    subject_id=models.IntegerField(max_length = 10, primary_key=True)
+    class_name=models.ForeignKey('class_details')
+
+# Model for Chapters   
+class chapter_details(models.Model):
+    chapter_name=models.CharField(max_length = 50)
+    chapter_id=models.IntegerField(max_length = 10, primary_key=True)
+    subject_id=models.ForeignKey('subject_details')
+
+# Model for classes
+class class_details(models.Model):
+    class_name=models.CharField(max_length = 50, primary_key=True)
+   
+# Mdoel for lecture notes
+class lecture_notes(models.Model):
+    class_name=models.ForeignKey('class_details')
+    subject_id=models.ForeignKey('subject_details')
+    chapter_id=models.ForeignKey('chapter_details')
+    path=models.FileField(upload_to= '.')
+
+

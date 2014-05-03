@@ -1,0 +1,2595 @@
+.branch_select{
+    margin-top:-58px;
+}
+
+.grid.col-300.copyright {
+
+
+
+    color: #FFFFFF !important;
+
+
+
+    font-size: 12px;
+
+
+
+}
+
+
+
+
+
+
+
+.grid.col-300.copyright > a {
+
+
+
+    color:#E1E1E1 !important;
+
+
+
+}
+
+
+
+
+
+
+
+.grid.col-300.scroll-top > a {
+
+
+
+    color:#E1E1E1 !important;
+
+
+
+}
+
+
+
+
+
+
+
+.grid.col-300.fit.powered {
+
+
+
+    color: #FFFFFF !important;
+
+
+
+    font-size: 12px;
+
+
+
+}
+
+
+
+
+
+
+
+.grid.col-300.fit.powered > a {
+
+
+
+    color:#E1E1E1 !important;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HTML5 display-role reset for older browsers */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#container {
+
+
+
+	-moz-font-smoothing: antialiased;
+
+
+
+	-webkit-font-smoothing: antialiased;
+
+	color: #707070;
+
+
+
+	font-family: Arial, Helvetica, sans-serif;
+
+
+
+	font-size: 14px;
+
+
+
+	font-smoothing: antialiased;
+
+
+
+	line-height: 1.5em;
+
+
+
+	text-rendering: optimizeLegibility;
+
+
+
+}
+
+
+
+
+
+
+
+/* =Typography
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+/* =Responsive 12 Column Grid
+
+
+
+    Grid was based on my Shell Theme released on 07/26/2011
+
+
+
+    http://themeid.com/responsive-grid/
+
+
+
+-------------------------------------------------------------- */
+
+
+
+.grid {
+
+
+
+	float: left;
+
+
+
+	margin-bottom: 2.127659574468%;
+
+
+
+	padding-top: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.grid-right {
+
+
+
+	float: right;
+
+
+
+	margin-bottom: 2.127659574468%;
+
+
+
+	padding-top: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.col-60, 
+
+
+
+.col-140, 
+
+
+
+.col-220, 
+
+
+
+.col-300, 
+
+
+
+.col-380, 
+
+
+
+.col-460, 
+
+
+
+.col-540, 
+
+
+
+.col-620, 
+
+
+
+.col-700, 
+
+
+
+.col-780, 
+
+
+
+.col-860 {
+
+
+
+	display: inline;
+
+
+
+	margin-right: 2.127659574468%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-60 {
+
+
+
+	width: 6.382978723404%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-140 {
+
+
+
+	width: 14.893617021277%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-220 {
+
+
+
+	width: 23.404255319149%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-300 {
+
+
+
+	width: 31.914893617021%;
+
+
+
+margin-bottom: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.col-380 {
+
+
+
+	width: 40.425531914894%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-460 {
+
+
+
+	width: 48.936170212766%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-540 {
+
+
+
+	width: 57.446808510638%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-620 {
+
+
+
+	width: 65.957446808511%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-700 {
+
+
+
+	width: 74.468085106383%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-780 {
+
+
+
+	width: 82.978723404255%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-860 {
+
+
+
+	width: 91.489361702128%;
+
+
+
+}
+
+
+
+
+
+
+
+.col-940 {
+
+
+
+	width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+.fit {
+
+
+
+	margin-left: 0 !important;
+
+
+
+	margin-right: 0 !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* =Responsive Images
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+/* =Responsive Embeds/Objects
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+/* =Links
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* =Forms
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select,
+
+
+
+input[type="text"], 
+
+
+
+input[type="password"] {
+
+
+
+    -moz-box-sizing: border-box;
+
+
+
+	-moz-border-radius: 2px;
+
+
+
+	-webkit-box-sizing: border-box;
+
+
+
+	-webkit-border-radius: 2px;
+
+
+
+	-webkit-box-shadow: 0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.05);
+
+
+
+	-moz-box-shadow: 0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.05);
+
+
+
+	box-shadow: 0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.05);
+
+
+
+	background: #f4f4f4;
+
+
+
+	box-sizing: border-box;
+
+
+
+	border: 1px solid #ccc;
+
+
+
+	border-bottom-color: #ccc;
+
+
+
+	border-radius: 2px;
+
+
+
+	margin: 0;
+
+
+
+	outline: none;
+
+
+
+	padding: 6px 8px;
+
+
+
+	vertical-align: middle;
+
+
+
+	width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+select {
+
+
+
+	height: auto;
+
+
+
+	width: 70%;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input, 
+
+
+
+select {
+
+
+
+	cursor: pointer;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =IE Forms
+
+
+
+-------------------------------------------------------------- */
+
+
+
+.ie7 area,
+
+
+
+.ie7 select,
+
+
+
+.ie7 textarea,
+
+
+
+.ie7 input[type="text"], 
+
+
+
+.ie7 input[type="password"] {
+
+
+
+    width: 96%;
+
+
+
+}
+
+
+
+
+
+
+
+/* =Buttons
+
+
+
+-------------------------------------------------------------- */
+
+
+
+.rank-finder input[type='submit'] {
+
+
+
+	-moz-border-radius: 2px;
+
+
+
+    -moz-box-shadow: 0pt -1px 0pt rgba(0, 0, 0, 0.075) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.3) inset, 0pt 1px 2px rgba(0, 0, 0, 0.1);
+
+
+
+    -webkit-box-shadow: 0pt -1px 0pt rgba(0, 0, 0, 0.075) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.3) inset, 0pt 1px 2px rgba(0, 0, 0, 0.1);
+
+
+
+	-webkit-border-radius: 2px;
+
+
+
+	background-color: #E5E5E5; /* Snow 3 */
+
+
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F6F5F5), to(#E5E5E5));
+
+
+
+	background-image: -webkit-linear-gradient(top, #F6F5F5, #E5E5E5);
+
+
+
+	background-image: -moz-linear-gradient(top, #f6f5f5, #E5E5E5);
+
+
+
+	background-image: -ms-linear-gradient(top, #f6f5f5, #E5E5E5);
+
+
+
+	background-image: -o-linear-gradient(top, #f6f5f5, #E5E5E5);
+
+
+
+	background-image: linear-gradient(top, #f6f5f5, #E5E5E5);
+
+
+
+	box-shadow: 0pt -1px 0pt rgba(0, 0, 0, 0.075) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.3) inset, 0pt 1px 2px rgba(0, 0, 0, 0.1);
+
+
+
+	border: 1px solid #ccc;
+
+
+
+	border-radius: 2px;
+
+
+
+	color: #707070;
+
+
+
+	cursor: pointer;
+
+
+
+	display: inline-block;
+
+
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f6f5f5, endColorstr=#E5E5E5);
+
+
+
+	font-size: 12px;
+
+
+
+	font-weight: 700;
+
+
+
+	margin: 0;
+
+
+
+	padding: 6px 10px;
+
+
+
+	text-decoration: none;
+
+
+
+	text-shadow: 0 1px 0 #fff;
+
+
+
+	vertical-align: middle;
+
+
+
+	white-space: nowrap;
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+/* =Buttons (Call to Action)
+
+
+
+-------------------------------------------------------------- */
+
+
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ie7 .call-to-action a.button {
+
+
+
+    padding: 11px 35px 19px 35px;
+
+
+
+}
+
+
+
+
+
+
+
+/* =Buttons (Sizes)
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Buttons (Colors)
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Info Boxes
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.notice {
+
+
+
+	background-color: #fbf9e9;
+
+
+
+	border: 1px solid #e3cf57;
+
+
+
+	color: #212121;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =IE6 Notice
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+.msie-box a {
+
+
+
+	color: #212121 !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* =Tables
+
+
+
+-------------------------------------------------------------- */
+
+
+
+th, 
+
+
+
+td,
+
+
+
+table {
+
+
+
+	border: 1px solid #ddd;
+
+
+
+}
+
+
+
+
+
+
+
+table {
+
+
+
+	border-collapse: collapse;
+
+
+
+	width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+/* =Lists
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Headings
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+/* =Margins & Paddings
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+th, td {
+
+
+
+	padding: .8em;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select {
+
+
+
+	padding: .1em .2em 0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Globals
+
+
+
+-------------------------------------------------------------- */
+
+
+
+#container {
+
+
+
+	margin-top: 97px;
+
+
+
+	max-width: 100%;
+
+
+
+	padding: 0px 25px;
+
+
+
+height:100%;
+
+
+
+}
+
+
+
+
+
+
+
+#wrapper {
+
+
+
+
+
+
+
+    clear: both;
+
+
+
+    margin: 15px auto;
+
+
+
+    padding: 0 0 20px;
+
+
+
+    position: relative;
+
+
+
+}
+
+
+
+
+
+
+
+.home #wrapper {
+
+
+
+	background-color: transparent;
+
+
+
+	border: none;
+
+
+
+	margin: 20px auto 0px auto;
+
+
+
+	padding: 0;
+
+
+
+}
+
+
+
+
+
+
+
+#header {
+
+
+
+	margin: 0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Content
+
+
+
+-------------------------------------------------------------- */
+
+
+
+#content {
+
+
+
+	    margin-bottom: 2px;
+
+
+
+  
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#container, 
+
+
+
+.widget-wrapper {
+
+
+
+	display: inline-block;
+
+
+
+}
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Media Print
+
+
+
+    If you're working on a Child Theme, make sure that all
+
+
+
+	media queries are included in your style.css
+
+
+
+-------------------------------------------------------------- */
+
+
+
+@media print {
+
+
+
+
+
+
+
+    h1 {
+
+
+
+	    page-break-before: always;
+
+
+
+    }
+
+
+
+
+
+
+
+    h1,  h2,  h3,  h4,  h5,  h6 {
+
+
+
+	    page-break-after: avoid;
+
+
+
+    }
+
+
+
+
+
+
+
+    ul,  ol,  dl {
+
+
+
+	    page-break-before: avoid;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/*	Retina (HiDPI) Display
+
+
+
+    http://www.quirksmode.org/blog/archives/2012/06/devicepixelrati.html
+
+
+
+-------------------------------------------------------------- */
+
+
+
+@media 
+
+
+
+    only screen and (-moz-min-device-pixel-ratio:1.5), 
+
+
+
+    only screen and (-o-min-device-pixel-ratio:3/2), 
+
+
+
+    only screen and (-webkit-min-device-pixel-ratio:1.5), 
+
+
+
+    only screen and (min-device-pixel-ratio:1.5) {
+
+
+
+    
+
+
+
+    body {}
+
+
+
+}
+
+
+
+
+
+
+
+/* =Responsive (Mobile) Design
+
+
+
+-------------------------------------------------------------- */
+
+
+
+@media screen and (max-width: 980px) {
+
+
+
+.home #widgets .widget-wrapper {
+
+margin-bottom:0px;
+
+}
+
+
+
+
+
+    body {}
+
+
+
+	
+
+
+
+    .grid, 
+
+
+
+	.grid-right {
+
+
+
+	    float: none;
+
+
+
+    }
+
+
+
+	
+
+
+
+	#featured-image .fluid-width-video-wrapper {
+
+
+
+	    margin: 20px 0 0 0;
+
+
+
+    }
+
+
+
+	
+
+
+
+.home #widgets {
+
+
+
+    margin-bottom: 18px;
+
+
+
+}
+
+
+
+    
+
+
+
+    .top-widget,
+
+
+
+    .home .top-widget {
+
+
+
+        margin-top: 0 !important;
+
+
+
+    }
+
+
+
+    #widgets .widget-wrapper {
+
+
+
+
+
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 650px) {
+
+
+
+
+
+
+
+
+
+    body {}
+
+
+
+
+
+
+
+    #logo {
+
+
+
+	    float: none;
+
+
+
+        margin: 0;
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+
+
+
+
+    .grid, 
+
+
+
+	.grid-right {
+
+
+
+	    float: none;
+
+
+
+    }
+
+
+
+
+
+
+
+	#featured-image .fluid-width-video-wrapper {
+
+
+
+	    margin: 20px 0 0 0;
+
+
+
+    }
+
+
+
+    
+
+
+
+
+
+
+
+    .top-widget {
+
+
+
+        float: none;
+
+
+
+        margin: 0 auto 0px auto;
+
+
+
+        position: relative;
+
+
+
+        text-align: center;
+
+
+
+        width: auto;
+
+
+
+padding:5px;
+
+
+
+    }
+
+
+
+    
+
+
+
+    .top-widget .widget-title {
+
+
+
+        text-align: center;
+
+
+
+    }
+
+
+
+	
+
+
+
+
+
+
+
+    .js .menu,
+
+
+
+	.js .sub-header-menu {
+
+
+
+		display: none;
+
+
+
+	}
+
+
+
+	
+
+
+
+	.top-menu, 
+
+
+
+	.footer-menu li {
+
+
+
+	    float: none;
+
+
+
+        font-size: 11px;
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+div.social-links {
+
+
+
+float:none;
+
+
+
+text-align:center;
+
+
+
+padding:4px 0;
+
+
+
+}
+
+
+
+	
+
+
+
+	.tinynav { 
+
+
+
+	    display: block;
+
+
+
+		margin: 0 auto 15px;
+
+
+
+		width: 100%;
+
+
+
+	}
+
+
+
+	
+
+
+
+	.tinynav {
+
+
+
+		-moz-appearance: none !important;
+
+
+
+		-webkit-appearance: none !important;
+
+
+
+		appearance: none !important;
+
+
+
+
+
+
+
+
+
+
+
+background: #fff url(images/bg-select.png) no-repeat right;
+
+
+
+	  border: 1px solid #E1E1E1;
+
+
+
+    border-radius: 4px 4px 4px 4px;
+
+
+
+	-moz-border-radius: 4px;;
+
+
+
+	-webkit-border-radius: 4px;
+
+
+
+    font-size: 14px;
+
+
+
+    overflow: hidden;
+
+
+
+color:#707070;
+
+
+
+    padding: 1em 1em 1em 0.75em;
+
+
+
+margin: 0 auto 15px;
+
+
+
+	}
+
+
+
+	
+
+
+
+	.ie7 .tinynav,
+
+
+
+ 
+
+
+
+	
+
+
+
+	.ie9 .tinynav  {
+
+
+
+		padding-right: 8px;
+
+
+
+	}
+
+
+
+	
+
+
+
+    #author-meta {
+
+
+
+        padding: 20px;
+
+
+
+    }
+
+
+
+    
+
+
+
+    #footer {
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+
+
+
+
+    #footer .social-icons {
+
+
+
+        padding-bottom: 10px;
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+
+
+
+
+
+    body {}
+
+
+
+
+
+
+
+
+
+
+
+    #logo {
+
+
+
+	    float: none;
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+
+
+
+
+    .grid, 
+
+
+
+	.grid-right {
+
+
+
+	    float: none;
+
+
+
+    }
+
+
+
+	
+
+
+
+	#featured-image .fluid-width-video-wrapper {
+
+
+
+	    margin: 20px 0 0 0;
+
+
+
+	}
+
+
+
+	
+
+
+
+	.featured-title {
+
+
+
+	    font-size: 40px;
+
+
+
+	    padding: 40px 20px 0 20px
+
+
+
+    }
+
+
+
+    
+
+
+
+    .navigation .next,
+
+
+
+    .navigation .previous {
+
+
+
+        text-align: center;
+
+
+
+    }
+
+
+
+	
+
+
+
+    .menu ul, 
+
+
+
+	.menu li, 
+
+
+
+	.top-menu, 
+
+
+
+	.footer-menu li, 
+
+
+
+	.sub-header-menu li {
+
+
+
+	    float: none;
+
+
+
+	    text-align: center;
+
+
+
+        text-rendering: optimizeSpeed;
+
+
+
+    }
+
+
+
+	
+
+
+
+    #footer {
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+
+
+
+
+    #footer .social-icons {
+
+
+
+	    text-align: center;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+
+
+
+    
+
+
+
+    body {}
+
+
+
+	
+
+
+
+	#featured p {
+
+
+
+	    font-size: 12px;
+
+
+
+		line-height: 1.2em;
+
+
+
+    }
+
+
+
+
+
+
+
+    .featured-title {
+
+
+
+	    font-size: 35px;
+
+
+
+    }
+
+
+
+	
+
+
+
+	.featured-subtitle {
+
+
+
+		font-size: 15px;
+
+
+
+	}
+
+    .call-to-action a.button {
+
+
+
+	    font-size: 14px;
+
+
+
+	    padding: 7px 17px;
+
+
+
+    }
+
+
+
+}
+
+
+
+

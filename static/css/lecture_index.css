@@ -1,0 +1,76 @@
+.lecture_page{margin-top:60px;margin-bottom:50px}
+/*  SECTIONS  */
+#first_child{border:1px solid lightgray;border-radius:5px;border-top-right-radius:60px;border-top-left-radius:60px;  border: 10px solid #fff;
+    border-bottom: 45px solid #fff;opacity:0.6}
+
+#first_child:hover{
+          opacity:1;
+  -webkit-box-shadow: 3px 3px 3px #8fd300;
+     -moz-box-shadow: 3px 3px 3px #8fd300;
+          box-shadow: 3px 3px 3px #8fd300;}
+.choice-boxes img{border-top-left-radius:50px;border-top-right-radius:50px;}
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+
+/*  GRID OF THREE  */
+.span_3_of_3 {
+	width: 100%;
+}
+.span_2_of_3 {
+	width: 66.1%;
+}
+.span_1_of_3 {
+	width: 32.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_3_of_3 {
+		width: 100%; 
+	}
+	.span_2_of_3 {
+		width: 100%; 
+	}
+	.span_1_of_3 {
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+

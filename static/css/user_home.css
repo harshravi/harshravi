@@ -1,0 +1,276 @@
+/* ::::: http://manishkumarphysics.in/wp-content/themes/Wcolor/FortAwesome-Font-Awesome-ee55c85/css/font-awesome.css ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/themes/Wcolor/blue-light.css ::::: */
+#sub-head{
+background:radial-gradient(ellipse at center center , #bcbcd1 0%, #bcbcd1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+height:100px;padding-left:20px;padding-top:10px;   
+}
+#sub-head h1 { color: rgb(255, 255, 255)!important; font-size: 1.6em !important;font-transform: uppercase;line-height:10px   }
+h2 { color: rgb(119, 119, 119); font-size: 1.6em;line-height:20px }
+th h4 {
+color:#900;
+border: 0px none; font: inherit; margin: 0px; padding: 0px; vertical-align: baseline; 
+}
+.topic-test td h4{
+    color:black;
+    border: 0px none; font: inherit; margin: 0px; padding: 0px; vertical-align: baseline;
+    font-weight:bold;
+}
+.contact-submit input[type="submit"] { background-color: rgb(229, 229, 229); background-image: -moz-linear-gradient(center top , rgb(246, 245, 245), rgb(229, 229, 229)); box-shadow: 0pt -1px 0pt rgba(0, 0, 0, 0.075) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.3) inset, 0pt 1px 2px rgba(0, 0, 0, 0.1); border: 1px solid rgb(204, 204, 204); border-radius: 2px; color: rgb(112, 112, 112); cursor: pointer; display: inline-block; font-size: 12px; font-weight: 700; margin: 0px; padding: 6px 10px; text-decoration: none; text-shadow: 0px 1px 0px rgb(255, 255, 255); vertical-align: middle; white-space: nowrap; }
+.grid.col-300.copyright { color: rgb(255, 255, 255) ! important; font-size: 12px; }
+.grid.col-300.copyright > a { color: rgb(225, 225, 225) ! important; }
+.grid.col-300.scroll-top > a { color: rgb(225, 225, 225) ! important; }
+.grid.col-300.fit.powered { color: rgb(255, 255, 255) ! important; font-size: 12px; }
+.grid.col-300.fit.powered > a { color: rgb(225, 225, 225) ! important; }
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/wp-e-commerce/wpsc-core/js/thickbox.css?ver=3.8.13.e8a508c011 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/wp-e-commerce/wpsc-components/theme-engine-v1/templates/wpsc-default.css?ver=3.8.13.e8a508c011 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/wp-e-commerce/wpsc-components/theme-engine-v1/templates/compatibility.css?ver=3.8.13.e8a508c011 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/wp-e-commerce/wpsc-core/js/product_rater.css?ver=3.8.13.e8a508c011 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/jetpack/modules/likes/style.css?ver=2.7 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/jetpack/modules/subscriptions/subscriptions.css?ver=3.8 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/themes/Wcolor/style.css?ver=1.8.4 ::::: */
+
+#call-wrapper .grid.col-940 { margin-bottom: 0px ! important; max-width: 100%;  }
+#sub-head { margin: 25px 0px 20px; overflow: visible; position: relative; z-index: 1; }
+#container-call { background: url('img/bg-footer-callout.png') repeat-x scroll 0px 0px rgb(231, 230, 230); width: 100%; }
+#call-wrapper { margin: 0px auto; max-width: 100%; padding: 0px 25px; }
+div.social-links > a { border-left: 1px solid rgba(255, 255, 255, 0.2); text-transform: lowercase; display: inline-block; font-weight: normal; font-size: 13px; line-height: 1em; margin-left: 10px; margin-top: 6px; margin-bottom: 6px; color: rgb(255, 255, 255) ! important; padding-left: 13px; text-decoration: none; text-shadow: 0px -1px rgba(0, 0, 0, 0.2); transition: all 0.3s ease 0s; }
+div.social-links > a:hover { text-shadow: 0px -1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.9); }
+div.social-links > a:first-child { border-left: medium none; }
+div.social-links { float: right; }
+div.social-links > a:before { font-family: 'FontAwesome'; font-size: 14px; font-style: normal; font-weight: normal; margin-top: 2px; padding-right: 4px; }
+.grid.col-940.fit { margin-bottom: 0px; }
+#footer_2 { background: url('img/bg-footer-copyright.png') no-repeat scroll center top transparent; padding: 12px 0px 0px; }
+.grid.col-300.copyright { color: rgb(255, 255, 255) ! important; font-size: 12px; }
+.grid.col-300.copyright > a { color: rgb(225, 225, 225) ! important; }
+.grid.col-300.scroll-top > a { color: rgb(225, 225, 225) ! important; }
+.grid.col-300.fit.powered { color: rgb(255, 255, 255) ! important; font-size: 12px; }
+.grid.col-300.fit.powered > a { color: rgb(225, 225, 225) ! important; }
+#footer .widget-wrapper { border: 0px solid rgb(225, 225, 225); border-radius: 0px; color: rgb(255, 255, 255); font-size: 13px; margin: 0px 0px 20px; padding: 0px; text-align: left; }
+#footer .widget-title-home h3 { color: rgb(255, 255, 255); text-align: left; font-size: 18px; letter-spacing: -1px; }
+#header-top, #footer-top { border-bottom: 4px solid rgb(249, 175, 109); background: radial-gradient(ellipse at center center , rgb(251, 193, 59) 0%, rgb(244, 105, 14) 100%) repeat scroll 0% 0% transparent; overflow: visible; position: relative; z-index: 1; }
+#footer-top { border-bottom: 0px none ! important; }
+#container_head { background: linear-gradient(to bottom, rgb(240, 240, 240) 0%, rgb(253, 253, 253) 100%) repeat scroll 0% 0% transparent; box-shadow: 0px -1px 0px white inset; top: 0px; width: 100%; z-index: 999; }
+.tt-overlay { background: url('img/header-tranparent-bg.png') no-repeat scroll center 120px transparent; height: 100%; position: absolute; width: 100%; top: 0px; z-index: -1; }
+.tt-overlay-footer { background: url('img/header-tranparent-bg.png') no-repeat scroll center 0px transparent; height: 100%; position: absolute; width: 100%; top: 0px; z-index: -1; }
+.shadow-header { background: url('img/header-shadow.png') no-repeat scroll center top transparent; height: 20%; position: absolute; width: 100%; z-index: -1; }
+.shadow-header-footer { background: url('img/header-shadow.png') no-repeat scroll center top transparent; height: 20%; position: absolute; width: 100%; z-index: -1; top: 0px; }
+
+
+
+ input, select, textarea { font-size: 100%; overflow: visible; margin: 0px; vertical-align: baseline; width: auto; }
+textarea { overflow: auto; vertical-align: text-top; }
+
+i, em, dfn, cite { font-style: italic; }
+.grid { float: left; margin-bottom: 2.12766%; padding-top: 0px; }
+.grid-right { float: right; margin-bottom: 2.12766%; padding-top: 0px; }
+.col-60, .col-140, .col-220, .col-300, .col-380, .col-460, .col-540, .col-620, .col-700, .col-780, .col-860 { display: inline; margin-right: 2.12766%; }
+.col-220 { width: 23.4043%; }
+.col-300 { width: 31.9149%; margin-bottom: 0px; }
+.col-460 { width: 48.9362%; }
+.col-620 { width: 65.9574%; }
+.col-940 { width: 100%; }
+.fit { margin-left: 0px ! important; margin-right: 0px ! important; }
+img { border: 0px none; max-width: 100%; vertical-align: middle; }
+a {  color: rgb(112, 112, 112); text-decoration: none; }
+a:hover {  text-decoration: none; }
+label { display: inline-block; font-weight: 700; padding: 2px 0px; }
+select, input[type="text"], input[type="password"] { -moz-box-sizing: border-box; box-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px 1px rgba(0, 0, 0, 0.05) inset; background: none repeat scroll 0% 0% rgb(244, 244, 244); border: 1px solid rgb(204, 204, 204); border-radius: 2px; margin: 0px; outline: medium none; padding: 6px 8px; vertical-align: middle;  }
+select { height: auto;   }
+area, textarea { -moz-box-sizing: border-box; box-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px 2px rgba(0, 0, 0, 0.05) inset; background: none repeat scroll 0% 0% rgb(244, 244, 244); border: 1px solid rgb(225, 225, 225); border-radius: 4px; height: auto; overflow: auto; margin: 0px; outline: medium none; padding: 8px 10px; width: 100%; }
+input, select { cursor: pointer; }
+area:focus, input:focus, textarea:focus { background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+input[type="text"], input[type="password"] { cursor: text; }
+th, td, table { border: 1px solid rgb(221, 221, 221); }
+table { border-collapse: collapse; width: 100%; }
+
+#container h1 { line-height:10px;margin-left:0px;color: rgb(255, 255, 255)!important; font-size: 1.6em !important;font-transform: uppercase;   }
+.left-cont h2 { color: rgb(119, 119, 119); font-size: 1.6em; line-height:20px;}
+#sub-head{height:100px;margin-top:72px;padding-top:10px;padding-left:20px;}
+
+th, td { padding: 0.8em; }
+#header { margin: 0px; }
+#content { margin-bottom: 20px; margin-top: 40px; }
+.post-data { clear: both; color: rgb(159, 159, 159); font-size: 12px; font-style: italic; font-weight: 300; margin-top: 0px; }
+.post-entry { clear: both; }
+.post-edit { clear: both; display: block; font-size: 12px; margin: 1.5em 0px; }
+.widget-wrapper { border-radius: 4px; border: 1px solid rgb(225, 225, 225); font-size: 13px; margin: 0px 0px 20px; padding: 20px; }
+#widgets { margin-top: 40px; }
+#widgets a { display: inline-block; margin: 0px; padding: 0px; text-decoration: none; }
+#widgets form { margin: 0px; }
+#widgets ul li { margin-left: 10px; }
+#widgets ul li a { display: inline; text-decoration: none; }
+#widgets .tagcloud, #widgets .textwidget { display: block; line-height: 1.5em; margin: 0px; word-wrap: break-word; text-align: center; }
+#widgets .textwidget a { display: inline; }
+.colophon-widget { background: none repeat scroll 0px 0px transparent; border: medium none; margin: 6px 0px 0px; min-height: 0px; padding: 30px 0px; }
+.colophon-widget .widget-title { color: rgb(0, 0, 0); font-size: 22px; letter-spacing: -1px; text-align: left; text-transform: none; }
+.widget-title, .widget-title-home h3 { display: block; text-transform: none; font-weight: 300; line-height: 23px; margin: 0px; padding: 0px 0px 17px; text-align: center; color: rgb(96, 96, 96); font-size: 17px; letter-spacing: 0px; }
+.widget-title { color: rgb(96, 96, 96); font-size: 18px; letter-spacing: 0px; text-align: left; text-transform: none; padding-bottom: 17px; }
+.breadcrumb-list { color: rgb(255, 255, 255); font-size: 11px; padding: 0px; }
+.breadcrumb-list a { color: rgb(225, 225, 225) ! important; }
+.breadcrumb-list a:hover { color: rgb(255, 255, 255); text-shadow: 0px -1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.9); }
+#widgets .widget-wrapper { background-image: -moz-linear-gradient(center top , rgb(250, 250, 250), rgb(244, 244, 244)); }
+.clearfix, #container, .widget-wrapper { display: block; }
+@media not all, not all, not all, not all {
+	body {  }
+}
+@media screen and (max-width: 980px) {
+	body {  }
+	.grid, .grid-right { float: none; }
+	#widgets .widget-wrapper {  }
+}
+@media screen and (max-width: 650px) {
+	body {  }
+	#logo { float: none; margin: 0px; text-align: center; }
+	.grid, .grid-right { float: none; }
+	.js .menu, .js .sub-header-menu { display: none; }
+	div.social-links { float: none; text-align: center; padding: 4px 0px; }
+	.tinynav { display: block; margin: 0px auto 15px; width: 100%; }
+	.tinynav { -moz-appearance: none ! important; background: url('img/bg-select.png') no-repeat scroll right center rgb(255, 255, 255); border: 1px solid rgb(225, 225, 225); border-radius: 4px; font-size: 14px; overflow: hidden; color: rgb(112, 112, 112); padding: 1em 1em 1em 0.75em; margin: 0px auto 15px; }
+	#footer { text-align: center; }
+}
+@media screen and (max-width: 480px) {
+	body {  }
+	#logo { float: none; text-align: center; }
+	.grid, .grid-right { float: none; }
+	.menu ul, .menu li, .top-menu, .footer-menu li, .sub-header-menu li { float: none; text-align: center; text-rendering: optimizespeed; }
+	#footer { text-align: center; }
+}
+@media screen and (max-width: 320px) {
+	body {  }
+}
+@media screen and (max-width: 240px) {
+	body {  }
+	.widget-title, .widget-title-home h3 { font-size: 14px; height: 13px; line-height: 13px; text-align: center; }
+}
+.grid.col-300.copyright { color: rgb(255, 255, 255) ! important; font-size: 12px; }
+.grid.col-300.copyright > a { color: rgb(225, 225, 225) ! important; }
+.grid.col-300.scroll-top > a { color: rgb(225, 225, 225) ! important; }
+.grid.col-300.fit.powered { color: rgb(255, 255, 255) ! important; font-size: 12px; }
+.grid.col-300.fit.powered > a { color: rgb(225, 225, 225) ! important; }
+.pt_touch > div:nth-child(1) { border: medium none; height: 272px ! important; width: 136px ! important; }
+.pt_touch > div:nth-child(2) { border: medium none; height: 272px ! important; width: 8px ! important; }
+.pt_touch > div:nth-child(2) > div { height: 61px ! important; width: 5px ! important; }
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/nextend-facebook-connect/buttons/facebook-btn.css?ver=3.8 ::::: */
+
+/* ::::: http://fonts.googleapis.com/css?family=Open+Sans:600 ::::: */
+
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url('mtp_ysujh_bn48vbg8snsnhcuogz7vygh680lgh-uxm.woff') format("woff");
+}
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/sidebar-login/assets/css/sidebar-login.css?ver=2.6.0 ::::: */
+
+.widget_wp_sidebarlogin ul { list-style: none outside none ! important; }
+.widget_wp_sidebarlogin ul.sidebar_login_links { margin-left: 0px ! important; }
+.widget_wp_sidebarlogin form { margin: 1em 0px; }
+.widget_wp_sidebarlogin form p { margin: 0.5em 0px; }
+.widget_wp_sidebarlogin form .input { width: 100%; margin: 2px; -moz-box-sizing: border-box; }
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/jetpack/modules/widgets/widgets.css?ver=20121003 ::::: */
+
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=2.7 ::::: */
+
+@media not all, not all, not all, not all, only screen and (min-resolution: 120dpi) {
+}
+#footer #footer-wrapper a { color: rgb(0, 0, 0) ! important; }
+.buy-now { padding: 10px; border-radius: 5px; border: 2px solid rgb(255, 255, 255); background: none repeat scroll 0% 0% rgb(255, 136, 0); float: right; }
+.buy-now:hover { background: none repeat scroll 0% 0% rgb(255, 204, 0); }
+.test-menus { margin: 0px ! important; }
+.test-menus li { padding: 10px; list-style: none outside none; text-align: center;  background: radial-gradient(ellipse at center center , #bcbcd1  0%, #bcbcd1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-bottom: 2px solid white !important; border-radius: 10px; }
+.test-menus li a { color: rgb(255, 255, 255) ! important; font-weight: bold ! important; font-size: 1.3em ! important; display:block }
+.test-menus li a:hover { color: #606060 ! important; }
+.test-menus li:hover, .test-menus li:active { background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+.test-menus li ul,.test-menus li ul li,.test-menus li { margin:0 !important}
+.test-menus li ul li { background: radial-gradient(ellipse at center center , #32D8FF 0%, #006CEA 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;     border: 1px solid #fff !important; }
+.test-menus li ul li:hover{ background: radial-gradient(ellipse at center center , #32D8FF 0%, #fff 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important; }
+.test-menus li ul li a{ display:block  !important; width:100%}
+.test-menus li ul li a:hover{  color: #003399 !important}
+.contact-form input[type="text"], .contact-form input[type="email"] { margin-bottom: 0px ! important; }
+.contact-form label { text-align: left; }
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/dropdown-menu-widget/css/shailan-dropdown.min.css ::::: */
+
+.clearfix:after { clear: both; content: "."; display: block; height: 0px; visibility: hidden; }
+/* ::::: http://cdn.invitereferrals.com/css/widget/tnp_js_modal.css ::::: */
+
+@media only screen and (max-width: 767px) {
+}
+/* ::::: http://s.gravatar.com/css/hovercard.css?ver=2014Janaa ::::: */
+
+@media not all, not all, only screen and (min--moz-device-pixel-ratio: 1.5), not all {
+}
+/* ::::: http://s.gravatar.com/css/services.css?ver=2014Janaa ::::: */
+
+.fb_reset { background: none repeat scroll 0% 0% transparent; border: 0px none; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_reset > div { overflow: hidden; }
+/* ::::: http://w.sharethis.com/button/css/buttons.b53d53949b67e7ea0adacde4c2838c6a.css ::::: */
+
+.stwrapper { position: absolute; width: 354px; z-index: 1000000; margin: 0px; padding: 0px; top: 0px; left: 0px; visibility: hidden; height: auto; }
+.stclose { z-index: 2000000; position: absolute; right: 3px; top: -2px; margin: 0px; padding: 0px; font-family: Helvetica,Arial,Sans-Serif; text-align: left; line-height: 1em; text-decoration: none; cursor: pointer; height: 28px; width: 26px; }
+/* ::::: http://manishkumarphysics.in/kota/wp-content/plugins/jetpack/modules/contact-form/css/grunion.css?ver=2.7 ::::: */
+
+.contact-form input[type="text"], .contact-form input[type="email"] { width: 300px; max-width: 98%; margin-bottom: 13px; }
+.contact-form textarea { height: 200px; width: 80%; float: none; margin-bottom: 13px; }
+.contact-form label { margin-bottom: 3px; float: none; font-weight: bold; display: block; }
+.contact-form label span { color: rgb(170, 170, 170); margin-left: 4px; font-weight: normal; }
+.textwidget input[type="text"], .textwidget input[type="email"], .textwidget textarea { width: 250px; max-width: 98%; }
+#post-entry-test .widget-wrapper  { float:left;margin-left: 5px; width:100%;  padding:5px !important}
+#post-entry-test .widget-wrapper h3, .login-button,.show-ans { padding: 5px; margin:0; text-align:center; display:block;       color:#fff; }
+#post-entry-test .widget-wrapper h3 , .show-ans{background:radial-gradient(ellipse at center center , #bcbcd1 0%, #bcbcd1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important}
+.show-ans{ margin:5px auto;font-weight:bold; text-transform:uppercase; width:50%; }
+.login-button  {width :30%; margin:0 auto}
+.login-button a {color:#fff!important;}
+.breadcrumb-current { font-size:14px; }
+.topic-test thead { color:#990000}
+.topic-test tbody { color:#000; text-align:center}
+.hide { display:none;}
+
+.subject-menus li { padding: 10px; list-style: none outside none; text-align: center;  background: linear-gradient( #ccc 0%, #e5e5e5  100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    margin-top:2px; }
+
+.subject-menus li > div { background: #fff;}
+
+.subject-menus li a { color:#222; font-weight:bold; display:block}
+
+.topic-test table { background: #fff;}
+
+.topic-test .left-cont{ width:70%; float:left}
+
+.topic-test .right-cont { width:20%; float:right;}
+
+.right-cont span {}
+
+.right-cont img { width:100%; margin: 10px; }
+#container.test-page { max-width:100%; margin:15px 0}
+.bgbutton {background:#33CC00 }
+.analysis h3 {
+ background:#e5e5e5; padding:5px 0; border-bottom:1px solid #666; clear:both; margin:20px 0;
+}
+#answer-page {   height: 30px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 47%;
+    z-index: 999;}
+#answer-page .login-button {
+width:160px; 
+float: left;
+margin:35px 5px;}
+#answer-page .login-button a {display:block; height:22px; line-height:22px}
+#answer-page .error { margin-top:20px ;color: red; font-weight:bold}
+.answer-analysis { width:100%;}
+.analysis-block { width:100%;float:left}
+
+
+
+
+

@@ -1,0 +1,101 @@
+ .urbangreymenu{
+              width: 170px; /*width of menu*/
+              }
+              .urbangreymenu .headerbar{
+              font: bold 11px Verdana;
+              color: white;
+              background: #606060;
+              margin-bottom: 0; /*bottom spacing between header and rest of content*/
+              text-transform: uppercase;
+              padding: 7px 0 7px 31px; /*31px is left indentation of header text*/
+              }
+              .urbangreymenu .headerbar a{
+              text-decoration: none;
+              color: white;
+              display: block;
+	          margin-right:31px;
+              letter-spacing:0.1px;
+               width:110px;
+              }
+              .urbangreymenu ul{
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              margin-bottom: 10px; /*bottom spacing between each UL and rest of content*/
+              }
+              .urbangreymenu ul li{
+              padding-bottom: 2px; /*bottom spacing between menu items*/
+              }
+              .urbangreymenu ul li a{
+              font: normal 12px Arial;
+              color: black;
+              background: #E9E9E9;
+              display: block;
+              padding: 5px 0;
+              line-height: 17px;
+              padding-left: 8px; /*link text is indented 8px*/
+              text-decoration: none;
+              }
+              .urbangreymenu ul li a:visited{
+              color: black;
+              }
+              .urbangreymenu ul li a:hover{ /*hover state CSS*/
+              color: white;
+              background: #45B2CF;
+              }
+              .submenu a:focus{
+              font: bold 14px Verdana;
+              background:#e0d7d5;
+              
+              }
+             .urbangreymenu1 ul h3 {       
+             background:rgba(17, 15, 113, 0.21);
+             height:20px;
+             margin-top:1px;
+             padding-top:4px; 
+             text-decoration:none !important;
+             }
+             
+
+
+
+
+.headerbar{
+    margin-top:10px
+}
+@media only screen and (max-width : 480px) {
+ .urbangreymenu{
+        height:auto;
+        max-width:480px !important;
+        width: 100% !important; /*width of menu*/
+              position:fixed;
+        margin-left:-20px;
+        z-index:1000000;
+         display:none;
+    }
+.urbangreymenu .headerbar{
+              position:relative;
+              z-index:1000000;
+    }
+    .urbangreymenu .headerbar a{
+        position:relative;
+        z-index:1;
+    }
+    .headerbar{
+    margin-top:0px
+    }
+    .urbangreymenu ul{
+        margin-bottom:0px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
